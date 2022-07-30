@@ -37,7 +37,7 @@ This Bot is Created by Zeldris Project, If your kanging this without fork at lea
 
 ### Support
 <p>
-<a href="https://t.me/pixcatzo"> <img src="https://img.shields.io/badge/Sena-Ex-blue?&logo=telegram" alt="Zeldris on Telegram" /> </a><br>
+<a href="https://t.me/pixcatzo"> <img src="https://img.shields.io/badge/Zeldris-blue?&logo=telegram" alt="Zeldris on Telegram" /> </a><br>
 <a href="https://t.me/animelovindo"> <img src="https://img.shields.io/badge/Support-Chat-blue?&logo=telegram" alt="Support Chat" /> </a><br>
 <a href="https://t.me/zeldrisProject"> <img src="https://img.shields.io/badge/Update-Channel-blue?&logo=telegram" alt="Update Channel" /> </a><br>
 </p>
