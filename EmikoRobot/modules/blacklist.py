@@ -39,7 +39,7 @@ def blacklist(update, context):
         chat_id = update.effective_chat.id
         chat_name = chat.title
 
-    filter_list = "Current blacklisted words in <b>{}</b>:\n".format(chat_name)
+    filter_list = "Daftar Kata Terlarang Di Grup <b>{}</b>:\n".format(chat_name)
 
     all_blacklisted = sql.get_chat_blacklist(chat_id)
 
@@ -116,7 +116,7 @@ def add_blacklist(update, context):
     else:
         send_message(
             update.effective_message,
-            "Tell me which words you would like to add in blacklist.",
+            "Beritahu Saya Apa Yang Harus Dimasukan Ke Daftar Kata Terlarang .",
         )
 
 
@@ -168,7 +168,7 @@ def unblacklist(update, context):
         elif successful == len(to_unblacklist):
             send_message(
                 update.effective_message,
-                "Removed <code>{}</code> from blacklist in <b>{}</b>!".format(
+                "Menghapus <code>{}</code> Dari Grup <b>{}</b>!".format(
                     successful,
                     html.escape(chat_name),
                 ),
@@ -178,7 +178,7 @@ def unblacklist(update, context):
         elif not successful:
             send_message(
                 update.effective_message,
-                "None of these triggers exist so it can't be removed.",
+                "Kata Terlarang Tidak Ditemukan!.",
                 parse_mode=ParseMode.HTML,
             )
 
