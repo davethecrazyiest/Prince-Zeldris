@@ -70,28 +70,28 @@ def ban(update: Update, context: CallbackContext) -> str:
                 parse_mode="html"
             )
         else:
-            message.reply_text("Failed to ban channel")
+            message.reply_text("Gagal ban channel")
         return
 
     user_id, reason = extract_user_and_text(message, args)
 
     if not user_id:
-        message.reply_text("⚠️ User not found.")
+        message.reply_text("⚠️ Pengguna Tidak Ditemukan.")
         return log_message
     try:
         member = chat.get_member(user_id)
     except BadRequest as excp:
         if excp.message != "User not found":
             raise
-        message.reply_text("Can't seem to find this person.")
+        message.reply_text("Pengguna Tidak Ada.")
         return log_message
     if user_id == bot.id:
-        message.reply_text("Oh yeah, ban myself, noob!")
+        message.reply_text("Goblok Amat! Masa Gua Mau Ban Diri Gua Sendiri !")
         return log_message
 
     if is_user_ban_protected(chat, user_id, member) and user not in DEV_USERS:
         if user_id == OWNER_ID:
-            message.reply_text("Trying to put me against a King huh?")
+            message.reply_text("Dia Owner Bego! Masa Mau Di Kick , Apa Lu Tolol?")
         elif user_id in DEV_USERS:
             message.reply_text("I can't act against our Prince.")
         elif user_id in DRAGONS:
@@ -109,7 +109,7 @@ def ban(update: Update, context: CallbackContext) -> str:
         elif user_id in WOLVES:
             message.reply_text("Trader access make them ban immune!")
         else:
-            message.reply_text("⚠️ Cannot banned admin.")
+            message.reply_text("⚠️ Gak Bisa Ban Admin Tot!.")
         return log_message
     if message.text.startswith("/s"):
         silent = True
@@ -206,7 +206,7 @@ def temp_ban(update: Update, context: CallbackContext) -> str:
         message.reply_text("I can't seem to find this user.")
         return log_message
     if user_id == bot.id:
-        message.reply_text("I'm not gonna BAN myself, are you crazy?")
+        message.reply_text(" Ban Diri Sendiri , Lu Goblok?")
         return log_message
 
     if is_user_ban_protected(chat, user_id, member):
@@ -214,7 +214,7 @@ def temp_ban(update: Update, context: CallbackContext) -> str:
         return log_message
 
     if not reason:
-        message.reply_text("You haven't specified a time to ban this user for!")
+        message.reply_text("Anda Tidak Memberikan Durasi Banned!")
         return log_message
 
     split_reason = reason.split(None, 1)
@@ -305,7 +305,7 @@ def unbanb_btn(update: Update, context: CallbackContext) -> str:
             if not is_user_admin(chat, int(user.id)):
                 bot.answer_callback_query(
                     query.id,
-                    text="⚠️ You don't have enough rights to unmute people",
+                    text="⚠️ Lu Gak Ada Izin Unmute Dia Tot!",
                     show_alert=True,
                 )
                 return ""
